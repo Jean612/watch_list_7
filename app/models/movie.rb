@@ -11,4 +11,5 @@
 #  updated_at :datetime         not null
 #
 class Movie < ApplicationRecord
+  max_paginates_per 8
 end
