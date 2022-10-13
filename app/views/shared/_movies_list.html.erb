@@ -1,0 +1,19 @@
+<div class="row my-2">
+  <% @movies.shuffle.each do |movie| %>
+    <div class="col-3">
+      <div class="card mb-2" style="width: 18rem;">
+        <img src=<%= movie.poster_url %> class="card-img-top" alt="...">
+        <div class="card-body overview-cards-home">
+          <h5 class="card-title"><%= movie.title %></h5>
+          <p class="card-text"><%= movie.overview %></p>
+        </div>
+        <div class="card-footer">
+          <a href="#" class="btn btn-primary">Ver Información</a>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>  
+<div class="row">
+  <%= paginate @movies, theme: 'bootstrap-5' %>
+</div>

@@ -1,3 +1,6 @@
+# == Route Map
+#
+
 Rails.application.routes.draw do
   devise_for :users
   root to: "pages#home"
@@ -5,4 +8,8 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "articles#index"
+  resources :lists do
+    resources :bookmarks, except: :destroy
+  end
+  resources :bookmarks, only: :destroy
 end
